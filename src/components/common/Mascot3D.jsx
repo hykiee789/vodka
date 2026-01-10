@@ -5,7 +5,7 @@ import * as THREE from 'three';
 
 const MascotMesh = ({ mouse }) => {
     const meshRef = useRef();
-    const texture = useLoader(THREE.TextureLoader, '/mascot_3d.png');
+    // const texture = useLoader(THREE.TextureLoader, import.meta.env.BASE_URL + 'mascot_3d.png');
 
     useFrame((state) => {
         if (!meshRef.current) return;
@@ -24,7 +24,8 @@ const MascotMesh = ({ mouse }) => {
                 {/* A slightly curved plane to give it more "volume" */}
                 <planeGeometry args={[3, 4, 32, 32]} />
                 <meshStandardMaterial
-                    map={texture}
+                    // map={texture}
+                    color="#ff69b4"
                     transparent={true}
                     side={THREE.DoubleSide}
                     alphaTest={0.5}
