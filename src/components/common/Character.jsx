@@ -60,7 +60,7 @@ const Character = ({ className = "" }) => {
 
             {/* Mascot Image with 3D depth */}
             <motion.img
-                src="/mascot_3d.png"
+                src="https://placehold.co/300x400/ff69b4/white?text=Mascot"
                 alt="3D Mascot"
                 className="w-56 md:w-72 h-auto relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
                 style={{
