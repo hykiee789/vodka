@@ -7,6 +7,9 @@ import Quotes from './scenes/Quotes';
 import Quiz from './scenes/Quiz';
 import BuildUp from './scenes/BuildUp';
 import GrandFinale from './scenes/GrandFinale';
+import TimeTravel from './scenes/TimeTravel';
+import CakeCutting from './scenes/CakeCutting';
+import Celebration from './scenes/Celebration';
 
 const SceneManager = ({ currentScene, onNext }) => {
     const renderScene = () => {
@@ -19,6 +22,9 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 6: return <Quiz onNext={onNext} />;
             case 7: return <BuildUp onNext={onNext} />;
             case 8: return <GrandFinale onNext={onNext} />;
+            case 9: return <TimeTravel onNext={onNext} />;
+            case 10: return <CakeCutting onNext={onNext} />;
+            case 11: return <Celebration onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };
