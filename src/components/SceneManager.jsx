@@ -3,10 +3,7 @@ import Intro from './scenes/Intro';
 import BirthdayReveal from './scenes/BirthdayReveal';
 import PhotoMemories from './scenes/PhotoMemories';
 import Letter from './scenes/Letter';
-import Quotes from './scenes/Quotes';
 import Quiz from './scenes/Quiz';
-import BuildUp from './scenes/BuildUp';
-import GrandFinale from './scenes/GrandFinale';
 import TimeTravel from './scenes/TimeTravel';
 import CakeCutting from './scenes/CakeCutting';
 import Celebration from './scenes/Celebration';
@@ -18,13 +15,10 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 2: return <BirthdayReveal onNext={onNext} />;
             case 3: return <PhotoMemories onNext={onNext} />;
             case 4: return <Letter onNext={onNext} />;
-            case 5: return <Quotes onNext={onNext} />;
-            case 6: return <Quiz onNext={onNext} />;
-            case 7: return <BuildUp onNext={onNext} />;
-            case 8: return <GrandFinale onNext={onNext} />;
-            case 9: return <TimeTravel onNext={onNext} />;
-            case 10: return <CakeCutting onNext={onNext} />;
-            case 11: return <Celebration onNext={onNext} />;
+            case 5: return <Quiz onNext={onNext} />;
+            case 6: return <TimeTravel onNext={onNext} />;
+            case 7: return <CakeCutting onNext={onNext} />;
+            case 8: return <Celebration onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };

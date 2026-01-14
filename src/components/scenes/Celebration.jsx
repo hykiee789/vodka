@@ -1,6 +1,53 @@
 import { motion } from 'framer-motion';
 import CoolText from '../common/CoolText';
 
+const Heart = ({ delay, x }) => (
+    <motion.div
+        className="absolute top-[-50px] text-3xl"
+        style={{ left: `${x}%` }}
+        initial={{ y: 0, opacity: 0.8 }}
+        animate={{
+            y: window.innerHeight + 100,
+            x: [0, 20, -20, 0],
+            rotate: [0, 10, -10, 0],
+            opacity: [0.8, 1, 0.8, 0]
+        }}
+        transition={{
+            duration: 8 + Math.random() * 4,
+            delay,
+            repeat: Infinity,
+            ease: "linear"
+        }}
+    >
+        ❤️
+    </motion.div>
+);
+
+const VedikaText = ({ delay, x }) => (
+    <motion.div
+        className="absolute top-[-50px] text-3xl font-hero font-extrabold tracking-wider"
+        style={{
+            left: `${x}%`,
+            color: ['#E0218A', '#E23636', '#FFB6C1', '#FF9999'][Math.floor(Math.random() * 4)],
+            filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.4))'
+        }}
+        initial={{ y: 0, opacity: 0.9 }}
+        animate={{
+            y: window.innerHeight + 100,
+            rotate: [0, 360],
+            opacity: [0.9, 1, 0.9, 0]
+        }}
+        transition={{
+            duration: 7 + Math.random() * 3,
+            delay,
+            repeat: Infinity,
+            ease: "linear"
+        }}
+    >
+        VEDIKA
+    </motion.div>
+);
+
 const Balloon = ({ color, delay, x }) => (
     <motion.div
         className="absolute bottom-[-100px] w-12 h-16 rounded-t-full rounded-b-3xl opacity-80"
@@ -21,15 +68,27 @@ const Balloon = ({ color, delay, x }) => (
 
 const Celebration = ({ onNext }) => {
     const balloons = [
-        { color: '#FF9999', x: 10, delay: 0 }, // Spiderman Soft Red
-        { color: '#FFB6C1', x: 25, delay: 1 }, // Barbie Soft Pink
-        { color: '#99CCFF', x: 40, delay: 0.5 }, // Spiderman Soft Blue
-        { color: '#FFC0CB', x: 55, delay: 2 }, // Barbie Soft Light Pink
-        { color: '#FFE4E1', x: 70, delay: 1.5 }, // Soft Misty Rose
-        { color: '#333333', x: 85, delay: 0.2 }, // Spiderman Soft Dark
+        { color: '#FF9999', x: 10, delay: 0 },
+        { color: '#FFB6C1', x: 25, delay: 1 },
+        { color: '#99CCFF', x: 40, delay: 0.5 },
+        { color: '#FFC0CB', x: 55, delay: 2 },
+        { color: '#FFE4E1', x: 70, delay: 1.5 },
+        { color: '#333333', x: 85, delay: 0.2 },
         { color: '#FF9999', x: 15, delay: 2.5 },
         { color: '#FFB6C1', x: 45, delay: 1.2 },
     ];
+
+    // Generate hearts rain
+    const hearts = [...Array(15)].map((_, i) => ({
+        x: (i * 7) % 100,
+        delay: i * 0.5
+    }));
+
+    // Generate VEDIKA text rain
+    const vedikaTexts = [...Array(6)].map((_, i) => ({
+        x: (i * 15 + 5) % 100,
+        delay: i * 1.2
+    }));
 
     return (
         <motion.div
@@ -39,6 +98,20 @@ const Celebration = ({ onNext }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }}
         >
+            {/* Hearts Rain */}
+            <div className="absolute inset-0 pointer-events-none">
+                {hearts.map((h, i) => (
+                    <Heart key={`heart-${i}`} {...h} />
+                ))}
+            </div>
+
+            {/* VEDIKA Text Rain */}
+            <div className="absolute inset-0 pointer-events-none">
+                {vedikaTexts.map((v, i) => (
+                    <VedikaText key={`vedika-${i}`} {...v} />
+                ))}
+            </div>
+
             {/* Balloons Background */}
             <div className="absolute inset-0 pointer-events-none opacity-40">
                 {balloons.map((b, i) => (
