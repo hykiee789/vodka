@@ -7,6 +7,7 @@ import Quiz from './scenes/Quiz';
 import TimeTravel from './scenes/TimeTravel';
 import CakeCutting from './scenes/CakeCutting';
 import Celebration from './scenes/Celebration';
+import TempleScene from './scenes/TempleScene';
 
 const SceneManager = ({ currentScene, onNext }) => {
     const renderScene = () => {
@@ -19,6 +20,7 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 6: return <TimeTravel onNext={onNext} />;
             case 7: return <CakeCutting onNext={onNext} />;
             case 8: return <Celebration onNext={onNext} />;
+            case 9: return <TempleScene onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };

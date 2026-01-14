@@ -7,7 +7,7 @@ function App() {
   const [scene, setScene] = useState(1);
 
   const handleNext = () => {
-    setScene((prev) => (prev >= 8 ? 1 : prev + 1));
+    setScene((prev) => (prev >= 9 ? 1 : prev + 1));
   };
 
   return (
