@@ -8,6 +8,7 @@ import TimeTravel from './scenes/TimeTravel';
 import CakeCutting from './scenes/CakeCutting';
 import Celebration from './scenes/Celebration';
 import TempleScene from './scenes/TempleScene';
+import TweetsScene from './scenes/TweetsScene';
 
 const SceneManager = ({ currentScene, onNext }) => {
     const renderScene = () => {
@@ -21,6 +22,7 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 7: return <CakeCutting onNext={onNext} />;
             case 8: return <Celebration onNext={onNext} />;
             case 9: return <TempleScene onNext={onNext} />;
+            case 10: return <TweetsScene onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };
