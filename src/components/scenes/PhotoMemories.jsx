@@ -211,7 +211,6 @@ const PhotoMemories = ({ onNext }) => {
                         className="text-5xl font-glam text-barbie-pink mb-2 drop-shadow-[0_0_15px_rgba(224,33,138,0.3)]"
                         delay={0.5}
                     />
-                    <p className="text-white/40 font-medium tracking-wide">I don't need a gift, because...</p>
                 </div>
 
                 {/* Cards Grid - 3 cards */}

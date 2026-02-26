@@ -9,6 +9,9 @@ import CakeCutting from './scenes/CakeCutting';
 import Celebration from './scenes/Celebration';
 import TempleScene from './scenes/TempleScene';
 import TweetsScene from './scenes/TweetsScene';
+import PassportScene from './scenes/PassportScene';
+import AyodhyaScene from './scenes/AyodhyaScene';
+import FlightScene from './scenes/FlightScene';
 
 const SceneManager = ({ currentScene, onNext }) => {
     const renderScene = () => {
@@ -23,6 +26,9 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 8: return <Celebration onNext={onNext} />;
             case 9: return <TempleScene onNext={onNext} />;
             case 10: return <TweetsScene onNext={onNext} />;
+            case 11: return <PassportScene onNext={onNext} />;
+            case 12: return <FlightScene onNext={onNext} />;
+            case 13: return <AyodhyaScene onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };

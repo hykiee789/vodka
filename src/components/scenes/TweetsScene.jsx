@@ -131,7 +131,7 @@ const TweetsScene = ({ onNext }) => {
                             name="Abhishek Sharma"
                             handle="AbhishekSharma_1"
                             time="4h"
-                            content="Happy Birthday @Vedika VB! Keep shining! ✨ I'm jealous of u having a friend like Hyder!"
+                            content="Happy Birthday @Vedika VB! Keep shining! ✨"
                             pp="/assets/abhishek.png"
                         />
                         <TweetHelper
