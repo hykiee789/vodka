@@ -7,8 +7,8 @@ const MusicPlayer = () => {
     const [hasInteracted, setHasInteracted] = useState(false);
     const audioRef = useRef(null);
 
-    // Using a beautiful Happy Birthday piano instrumental
-    const audioUrl = "https://archive.org/download/HappyBirthdayInstrumentalPianoViaInstrumentals.com.ng/Happy%20Birthday%20Instrumental%20Piano%20via%20instrumentals.com.ng.mp3";
+    // Using "Inthandham" from user downloads
+    const audioUrl = "/assets/inthandham.mp3";
 
     useEffect(() => {
         const handleFirstInteraction = () => {

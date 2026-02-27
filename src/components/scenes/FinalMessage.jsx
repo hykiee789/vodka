@@ -98,12 +98,17 @@ const FinalMessage = ({ onNext }) => {
 
                 <motion.button
                     onClick={onNext}
-                    className="mt-16 px-10 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white/40 hover:text-white/80"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 10 }}
+                    className="mt-16 group relative px-12 py-4 bg-gradient-to-r from-spiderman-red to-barbie-pink rounded-full font-hero text-xl tracking-[0.2em] text-white shadow-[0_0_20px_rgba(226,54,54,0.3)] hover:shadow-[0_0_40px_rgba(226,54,54,0.5)] transition-all duration-500 overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 10, type: "spring" }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                 >
-                    Back to Start 🔄
+                    <span className="relative z-10 flex items-center gap-3">
+                        RESTART EXPERIENCE <span className="group-hover:rotate-180 transition-transform duration-700">🔄</span>
+                    </span>
+                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 </motion.button>
             </div>
         </motion.div>
