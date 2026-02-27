@@ -12,6 +12,8 @@ import TweetsScene from './scenes/TweetsScene';
 import PassportScene from './scenes/PassportScene';
 import AyodhyaScene from './scenes/AyodhyaScene';
 import FlightScene from './scenes/FlightScene';
+import BestMoment from './scenes/BestMoment';
+import FinalMessage from './scenes/FinalMessage';
 
 const SceneManager = ({ currentScene, onNext }) => {
     const renderScene = () => {
@@ -29,6 +31,8 @@ const SceneManager = ({ currentScene, onNext }) => {
             case 11: return <PassportScene onNext={onNext} />;
             case 12: return <FlightScene onNext={onNext} />;
             case 13: return <AyodhyaScene onNext={onNext} />;
+            case 14: return <BestMoment onNext={onNext} />;
+            case 15: return <FinalMessage onNext={onNext} />;
             default: return <Intro onNext={onNext} />;
         }
     };
